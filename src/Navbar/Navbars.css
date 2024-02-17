@@ -1,0 +1,41 @@
+@import url('../index.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background-image: url('../assets/Images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav_body {
+    Width: 100%;
+    height: 80px;
+    border-radius: 13px;
+    background: var(--primaryColor);
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: black;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.sign_btn{
+    width: 146px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    color: var(--whiteColor);
+    background: var(--blueColor);
+}
