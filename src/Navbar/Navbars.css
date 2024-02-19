@@ -17,15 +17,13 @@
     height: 80px;
     border-radius: 13px;
     background: var(--primaryColor);
-    display: flex;
-    align-items: center;
 }
 
 .nav-link {
     color: black;
     font-family: DM Sans;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 700;
     line-height: 21px;
     letter-spacing: 0em;
     text-align: left;
@@ -38,4 +36,61 @@
     border: none;
     color: var(--whiteColor);
     background: var(--blueColor);
+}
+
+.btn-primary {
+    color: black;
+    background-color: #D9EDFF;
+    border-color: #D9EDFF;
+}
+
+.btn-primary:hover {
+    color: black;
+    background-color: #D9EDFF;
+    border-color: #D9EDFF;
+}
+
+.btn-primary:focus {
+    color: black;
+    background-color: #D9EDFF;
+    border-color: #D9EDFF;
+    box-shadow: none;
+}
+
+.offcanvas-top {
+    height: 100%;
+}
+
+.offcanvas {
+    background-color: var(--primaryColor);
+}
+
+.close_btn{
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: var(--blueColor);
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .nav-link {
+        color: black;
+        font-family: DM Sans;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+    } 
+}
+
+@media (max-width: 576px) {
+    .sign_btn{
+        width: 80px;
+        height: 48px;
+        border-radius: 8px;
+        border: none;
+        color: var(--whiteColor);
+        background: var(--blueColor);
+    }
 }

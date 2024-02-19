@@ -20,6 +20,7 @@
     letter-spacing: 0em;
     text-align: left;
     color: var(--blueColor);
+    margin: 0;
 }
 
 .hero_stylish {
@@ -30,52 +31,124 @@
     letter-spacing: 0em;
     text-align: left;
     color: var(--blackColor);
+    margin: 0;
+}
+
+.hero_detail {
+    color: var(--blackColor);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    font-family: DM Serif Display;
+    font-size: 32px;
 }
 
 .tago_style {
-    width: 223px;
-    height: 89px;
+    display: inline-block;
     border-radius: 8px;
-    background: var(--blueColor);
-    color: var(--whiteColor);
+    background: #0581F8;
+    color: white;
     padding: 4px;
+    animation: soundwave 4s linear infinite;
 }
+
+@keyframes soundwave {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Adjust the amplitude of the soundwave */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 .tago_stylish {
-    font-family: DM Sans;
-    font-size: 17px;
+    color: var(--blackColor);
+    font-style: normal;
     font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0em;
+    line-height: 40px;
+    font-size: 24px;
+    font-family: DM Sans;
     text-align: left;
-    color: var(--darkColor);
 }
 
-.hero_img{
-    width: 100;
-    height: 400px;
+.google_play{
+    width: 200px;
+    height: 70px;
+    border: none;
+    border-radius: 10px;
+    background: var(--whiteColor);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
-.elipse_style{
+
+.hero_img {
+    width: 80%;
+    margin-bottom: 30px;
+    animation: popup 2s ease-in-out infinite alternate;
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(1); /* Original size */
+    }
+    100% {
+        transform: scale(1.1); /* Slightly larger size */
+    }
+}
+
+
+.elipse_style {
+    position: absolute;
+    top: -5%;
+    left: 9%;
+}
+
+.elipse_styles {
     position: absolute;
     top: 2%;
-    left: 17%;
+    left: 75%;
 }
 
-.elipse_styles{
-    position: absolute;
-    top: 9%;
-    left: 70%;
-}
-
-.elipse_styless{
+.elipse_styless {
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: -4%;
 }
 
-.elipse_stylish{
+.elipse_stylish {
     position: absolute;
     top: 100%;
     left: 50%;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .hero_second{
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .hero_second{
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero_stylish {
+        font-family: DM Sans;
+        font-size: 65px;
+        font-weight: 700;
+        line-height: 99px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--blackColor);
+        margin: 0;
+    }
+    .hero_second{
+        margin-top: 3rem;
+    }
 }
