@@ -1,12 +1,45 @@
 import React, { useState, useEffect } from 'react'
 import './Exchange.css'
 import Vector from '../../../assets/Images/Vectorone.png'
-import Uk from '../../../assets/Images/uk.png'
+import AE from '../../../assets/Images/ae.png'
 import Europe from '../../../assets/Images/europe.png'
 import Circle from '../../../assets/Images/Group 45.png'
+import Lottie from 'react-lottie';
+import Suitcase from '../../../../Suitcase.json';
+import Thumb from '../../../../Thumb.json';
+import { RiArrowDropDownLine } from "react-icons/ri";
+import countryList from './Countrylist';
 
 export const Exchange = () => {
 
+    const [selectedCountries, setSelectedCountries] = useState({});
+    
+    function loadFlag(event) {
+        const countryCode = event.target.value;
+        const dropdownId = event.target.id; // Get the ID of the dropdown
+        setSelectedCountries(prevState => ({
+            ...prevState,
+            [dropdownId]: countryCode // Update the selected country for the corresponding dropdown
+        }));
+    }
+
+    const suitcaseOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: Suitcase,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
+    const thumbOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: Thumb,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
 
     return (
         <>
@@ -14,32 +47,34 @@ export const Exchange = () => {
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-lg-6 cols_gap pt-4">
-                            <p className='exchange_style'>Best <span className='exchange_stylish'>Exchange rates</span></p>
-                            <div className="d-flex align-items-center">
-                                <div className="exchange_box">
-
+                            <div>
+                                <p className='exchange_style'>Best <span className='exchange_stylish'>Exchange rates</span></p>
+                                <div className="d-flex align-items-center pt-4">
+                                    <div className="exchange_box">
+                                        <Lottie options={suitcaseOptions} height={60} width={60} />
+                                    </div>
+                                    <div className="d-flex flex-column">
+                                        <p className='exchanges_content'>Free Wallet Transfer</p>
+                                        <p className='exchange_content'>No intermediaries. It is like exchanging cash in person!</p>
+                                    </div>
                                 </div>
-                                <div className="d-flex flex-column">
-                                    <p className='exchanges_content'>Free Wallet Transfer</p>
-                                    <p className='exchange_content'>No intermediaries. It is like exchanging cash in person!</p>
+                                <div className="d-flex align-items-center mt-3">
+                                    <div className="exchange_box">
+                                        <Lottie options={suitcaseOptions} height={60} width={60} />
+                                    </div>
+                                    <div className="d-flex flex-column">
+                                        <p className='exchanges_content'>Instant Wallet Transfer</p>
+                                        <p className='exchange_content'>If you lose your wallet key, we can help you recover. We've <br /> built our own account recovery system.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="d-flex align-items-center mt-3">
-                                <div className="exchange_box">
-
-                                </div>
-                                <div className="d-flex flex-column">
-                                    <p className='exchanges_content'>Instant Wallet Transfer</p>
-                                    <p className='exchange_content'>If you lose your wallet key, we can help you recover. We've <br /> built our own account recovery system.</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center mt-3">
-                                <div className="exchange_box">
-
-                                </div>
-                                <div className="d-flex flex-column">
-                                    <p className='exchanges_content'>Easy & Intuitive Interface</p>
-                                    <p className='exchange_content'>Safe and easy to use 2-Factor Authentication process, <br /> including FaceID and FingerprintID</p>
+                                <div className="d-flex align-items-center mt-3">
+                                    <div className="exchange_box">
+                                        <Lottie options={thumbOptions} height={60} width={60} />
+                                    </div>
+                                    <div className="d-flex flex-column">
+                                        <p className='exchanges_content'>Easy & Intuitive Interface</p>
+                                        <p className='exchange_content'>Safe and easy to use 2-Factor Authentication process, <br /> including FaceID and FingerprintID</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -51,9 +86,13 @@ export const Exchange = () => {
                                         <input type="text" className='exchangerate_input' />
                                     </div>
                                     <div className='exchange_box_two'>
-                                        <select name="" id="currencySelect" className='dropdown_list'>
-                                            <option value="GBP" >GPB</option>
-                                            <option value="GBP" >GPB</option>
+                                        <img src={`https://flagcdn.com/48x36/${selectedCountries.dropdown1  ? countryList[selectedCountries.dropdown1].toLowerCase() : `AE`}.png`} style={{ width: "18%" }} alt="Flag" />
+                                        <select id="dropdown1" className='drop_style_head' onChange={loadFlag} value={selectedCountries.dropdown1 || ''}>
+                                            {Object.keys(countryList).map((currencyCode) => (
+                                                <option key={currencyCode} value={currencyCode}>
+                                                    {countryList[currencyCode]}
+                                                </option>
+                                            ))}
                                         </select>
                                     </div>
                                 </div>
@@ -65,9 +104,13 @@ export const Exchange = () => {
                                         <input type="text" className='exchange_input_one' />
                                     </div>
                                     <div className='exchange_box_two'>
-                                        <select name="" id="" className='dropdown_list_one'>
-                                            <option value="">EUR</option>
-                                            <option value="">EUR</option>
+                                        <img src={`https://flagcdn.com/48x36/${selectedCountries.dropdown2 ? countryList[selectedCountries.dropdown2].toLowerCase() : ''}.png`} style={{ width: "18%" }} alt="Flag" />
+                                        <select id="dropdown2" className='drop_style_head' onChange={loadFlag} value={selectedCountries.dropdown2 || ''}>
+                                            {Object.keys(countryList).map((currencyCode) => (
+                                                <option key={currencyCode} value={currencyCode}>
+                                                    {countryList[currencyCode]}
+                                                </option>
+                                            ))}
                                         </select>
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@ export const Navbars = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg">
-        <div className="container nav_body">
+        <div className="container nav_body mt-4">
           <img src={Logo} alt="" />
           <div className='d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block'>
             <ul className="navbar-nav gap-4 ">

@@ -10,6 +10,7 @@ import Auth from '../../../../Auth.json';
 import Eye from '../../../../Eye.json'
 import Tick from '../../../../Tick.json'
 import Flash from '../../../../Flash.json'
+import Lock from '../../../../Lock.json'
 
 export const Fasst = () => {
 
@@ -43,7 +44,7 @@ export const Fasst = () => {
     const tickOptions = {
         loop: true,
         autoplay: true,
-        animationData: Tick,
+        animationData: Lock,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
         }
@@ -86,8 +87,8 @@ export const Fasst = () => {
         }
     ];
 
-    const Card = ({ iconOptions, title, subTitle }) => (
-        <div className="col card_line">
+    const Card = ({ iconOptions, title, subTitle, isLast }) => (
+        <div className={`col ${isLast ? '' : 'card_line'}`}>
             <div className='d-flex justify-content-center align-items-center' style={{ height: "110px", width: "100%" }}>
                 <div className='icon_box'>
                     <Lottie options={iconOptions} height={60} width={60} />
@@ -106,14 +107,14 @@ export const Fasst = () => {
                         <div className='fasst_body pb-5'>
                             <img src={Vector} alt="" className='vector_style' />
                             <img src={Vectorone} alt="" className='vector_stylish' />
-                            <p className='fasst_style'>TagoCash is <span className='fasst_box'>F.A.S.S.T</span></p>
+                            <p className='fasst_style'>TagoCash is <span className='fasst_box'>FASST</span></p>
                             <div className='d-flex justify-content-center mt-4'>
                                 <img src={Lineone} alt="" />
                                 <img src={Line} alt="" style={{ width: "5%" }} />
                             </div>
                             <div className="row m-0 mt-4">
                                 {cardData.map((card, index) => (
-                                    <Card key={index} {...card} className="m-0 p-0" />
+                                    <Card key={index} {...card} isLast={index === cardData.length - 1} className="m-0 p-0" />
                                 ))}
                             </div>
                             {/* <div className="row m-0 mt-4">

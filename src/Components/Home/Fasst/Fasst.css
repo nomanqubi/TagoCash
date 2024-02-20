@@ -14,14 +14,21 @@
     position: relative;
 }
 
+.fasst_body:hover {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
 .vector_style {
     position: absolute;
+    border-radius: 23px;
     top: 0;
     right: 0;
 }
 
 .vector_stylish {
     position: absolute;
+    border-radius: 23px;
     left: 0;
     bottom: 0;
 }
@@ -77,5 +84,5 @@
 }
 
 .card_line {
-    border-left: 3px solid #CDE1FF;
+    border-right: 3px solid #CDE1FF;
 }
