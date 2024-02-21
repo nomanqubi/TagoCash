@@ -6,35 +6,61 @@ import { IoReorderThreeOutline } from "react-icons/io5";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AiFillCloseSquare } from "react-icons/ai";
+import Polygon from '../assets/Images/Polygon 1.png'
 
 export const Navbars = () => {
 
+  const [activeTab, setActiveTab] = useState('Home');
+  const [isScrolled, setIsScrolled] = useState(false);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleNavLinkClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const isCurrentlyScrolled = scrollTop > 0;
+      setIsScrolled(isCurrentlyScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg">
-        <div className="container nav_body mt-4">
+      <nav className={`navbar navbar-expand-lg mt-3 ${isScrolled ? 'hidden' : 'visible'}`}>
+        <div className="container nav_body">
           <img src={Logo} alt="" />
           <div className='d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block'>
             <ul className="navbar-nav gap-4 ">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">Home</NavLink>
+                <NavLink className={`nav-link ${activeTab === 'Home' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Home')}>Home</NavLink>
+                {activeTab === 'Home' && <img src={Polygon} alt="" />}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">Features</NavLink>
+                <NavLink className={`nav-link ${activeTab === 'Features' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Features')}>Features</NavLink>
+                {activeTab === 'Features' && <img src={Polygon} alt="" />}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">Easy & Safe</NavLink>
+                <NavLink className={`nav-link ${activeTab === 'Easy & Safe' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Easy & Safe')}>Easy & Safe</NavLink>
+                {activeTab === 'Easy & Safe' && <img src={Polygon} alt="" />}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">Togo Works</NavLink>
+                <NavLink className={`nav-link ${activeTab === 'Togo Works' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Togo Works')}>Togo Works</NavLink>
+                {activeTab === 'Togo Works' && <img src={Polygon} alt="" />}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">Custom Support</NavLink>
+                <NavLink className={`nav-link ${activeTab === 'Custom Support' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Custom Support')}>Custom Support</NavLink>
+                {activeTab === 'Custom Support' && <img src={Polygon} alt="" />}
               </li>
             </ul>
           </div>

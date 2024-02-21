@@ -10,13 +10,14 @@
     background-image: url('../../../assets/Images/background.png');
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 12.5rem;
 }
 
 .hero_style {
     font-family: DM Sans;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 500;
-    line-height: 23px;
+    line-height: 31px;
     letter-spacing: 0em;
     text-align: left;
     color: var(--blueColor);
@@ -41,26 +42,59 @@
     line-height: 40px;
     font-family: DM Serif Display;
     font-size: 32px;
+    margin: 0;
 }
 
 .tago_style {
-    display: inline-block;
+    /* display: inline-block; */
     border-radius: 8px;
     background: #0581F8;
+    /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; */
     color: white;
+    /* color: black; */
     padding: 4px;
-    animation: soundwave 4s linear infinite;
+    
 }
-
-@keyframes soundwave {
+.ocean { 
+    height: 5%;
+    width:50%;
+    position:relative;
+    bottom:0;
+    /* overflow: hidden; */
+    left:0;
+    /* background: black; */
+  }
+.wave {
+        /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;  */
+    /* position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px; */
+    /* animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite; */
+    /* transform: translate3d(0, 0, 0); */
+}
+@keyframes wave {
     0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(10px); /* Adjust the amplitude of the soundwave */
+      margin-left: 0;
     }
     100% {
-        transform: translateX(0);
+      margin-left: -1600px;
+    }
+}
+  
+
+@keyframes bell {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+        /* Adjust the amplitude of the bell motion */
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -75,7 +109,7 @@
     text-align: left;
 }
 
-.google_play{
+.google_play {
     width: 200px;
     height: 70px;
     border: none;
@@ -84,6 +118,10 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
 
+.google_play:hover {
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
 
 .hero_img {
     width: 62%;
@@ -92,48 +130,84 @@
 
 @keyframes popup {
     0% {
-        transform: scale(1); /* Original size */
+        transform: scale(1);
+        /* Original size */
     }
+
     100% {
-        transform: scale(1.1); /* Slightly larger size */
+        transform: scale(1.1);
+        /* Slightly larger size */
     }
 }
-
 
 .elipse_style {
     position: absolute;
     top: -6%;
-    left: 50%;
+    left: 32%;
 }
 
 .elipse_styles {
     position: absolute;
-    top: 40%;
-    left: 104%;
+    top: 47%;
+    left: 86%;
 }
 
 .elipse_styless {
     position: absolute;
     top: 50%;
-    left: 36%;
+    left: 16%;
 }
 
 .elipse_stylish {
     position: absolute;
     top: 106%;
-    left: 69%;
+    left: 48%;
 }
 
-.slide_hero{
+.elipse_style,
+.elipse_styles,
+.elipse_styless,
+.elipse_stylish {
+    transition: top 0.5s ease, left 0.5s ease;
+    /* Add transitions for smooth animation */
+}
+
+.hero_div_stlye:hover .elipse_style {
+    top: 0%;
+    /* Move the image up on hover */
+    left: 40%;
+    /* Adjust the left position on hover */
+}
+
+.hero_div_stlye:hover .elipse_styles {
+    top: 48%;
+    /* Move the image down on hover */
+    left: 83%;
+    /* Adjust the left position on hover */
+}
+
+.hero_div_stlye:hover .elipse_styless {
+    top: 50%;
+    /* Move the image up on hover */
+    left: 20%;
+    /* Adjust the left position on hover */
+}
+
+.hero_div_stlye:hover .elipse_stylish {
+    top: 100%;
+    /* Move the image down on hover */
+    left: 48%;
+    /* Adjust the left position on hover */
+}
+
+.slide_hero {
     width: 100%;
     height: 50px;
     margin-left: 7%;
     margin-top: 5.5rem;
 }
 
-
-
-.hero_div_stlye{
+.hero_div_stlye {
     position: relative;
     display: flex;
     justify-content: center;
@@ -156,32 +230,34 @@
         top: 40%;
         left: 102%;
     }
-    
+
     .elipse_styless {
         position: absolute;
         top: 50%;
         left: 29%;
     }
-    
+
     .elipse_stylish {
         position: absolute;
         top: 106%;
         left: 65%;
     }
 
-    .slide_hero{
+    .slide_hero {
         margin-left: 10%;
         margin-top: 7rem;
     }
 }
 
-@media  (min-width: 992px) and (max-width: 1200px) {
-    .hero_div_stlye{
-        margin-top: 60px; 
+@media (min-width: 992px) and (max-width: 1200px) {
+    .hero_div_stlye {
+        margin-top: 60px;
     }
+
     .hero_img {
         width: 75%;
     }
+
     .elipse_style {
         position: absolute;
         top: -10%;
@@ -193,31 +269,32 @@
         top: 42%;
         left: 105%;
     }
-    
+
     .elipse_styless {
         position: absolute;
         top: 50%;
         left: 20%;
     }
-    
+
     .elipse_stylish {
         position: absolute;
         top: 107%;
         left: 60%;
     }
 
-    .slide_hero{
+    .slide_hero {
         margin-left: 15%;
         margin-top: 7.5rem;
     }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {  
-    .hero_div_stlye{
+@media (min-width: 768px) and (max-width: 992px) {
+    .hero_div_stlye {
         display: flex;
         justify-content: center;
         align-items: center;
-    } 
+    }
+
     .hero_img {
         width: 55%;
     }
@@ -233,31 +310,31 @@
         top: 47%;
         left: 82%;
     }
-    
+
     .elipse_styless {
         position: absolute;
         top: 50%;
         left: 20%;
     }
-    
+
     .elipse_stylish {
         position: absolute;
         top: 106%;
         left: 50%;
     }
 
-    .slide_hero{
+    .slide_hero {
         margin-left: 0%;
         margin-top: 6rem;
     }
 
-    .hero_second{
+    .hero_second {
         margin-top: 3rem;
     }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-    .hero_div_stlye{
+    .hero_div_stlye {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -278,31 +355,31 @@
         top: 45%;
         left: 87%;
     }
-    
+
     .elipse_styless {
         position: absolute;
         top: 50%;
         left: 15%;
     }
-    
+
     .elipse_stylish {
         position: absolute;
         top: 106%;
         left: 50%;
     }
 
-    .slide_hero{
+    .slide_hero {
         margin-left: 0%;
         margin-top: 6rem;
     }
 
-    .hero_second{
+    .hero_second {
         margin-top: 3rem;
     }
 }
 
 @media (max-width: 576px) {
-    .hero_div_stlye{
+    .hero_div_stlye {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -323,20 +400,20 @@
         top: 45%;
         left: 87%;
     }
-    
+
     .elipse_styless {
         position: absolute;
         top: 50%;
         left: 15%;
     }
-    
+
     .elipse_stylish {
         position: absolute;
         top: 106%;
         left: 50%;
     }
 
-    .slide_hero{
+    .slide_hero {
         margin-left: 0%;
         margin-top: 6rem;
     }
@@ -351,7 +428,8 @@
         color: var(--blackColor);
         margin: 0;
     }
-    .hero_second{
+
+    .hero_second {
         margin-top: 3rem;
     }
 }

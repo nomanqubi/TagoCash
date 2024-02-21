@@ -21,7 +21,7 @@ export const Everywhere = () => {
                     </div>
                     <div className="row mt-3 justify-content-center">
                         <div className="col-md-4">
-                            <select className="everywhere_input ps-3 pe-3" aria-label="Deposit Options">
+                            <select className="everywhere_input ps-3 pe-3" aria-label="Deposit Options" style={{outline: "none"}}>
                                 <option value="" >Deposit Option</option>
                                 <option value="Bank">Bank</option>
                                 <option value="ATM">ATM</option>
@@ -29,11 +29,12 @@ export const Everywhere = () => {
                             </select>
                         </div>
                         <div className="col-md-4">
-                            <div className='everywhere_input ps-3 pe-3' style={{ border: "1px solid #0581F8" }}>
-                                <div className='d-flex justify-content-between align-items-center w-100'>
-                                    <p className='everywhere_drop_head'>Search Countries</p>
-                                    <p style={{ fontSize: "25px", margin: "0", cursor: "pointer" }}><CiSearch /></p>
-                                </div>
+                            <div className='everywhere_input ps-3 pe-3' style={{ border: "2px solid #0581F8" }}>
+                                <input className='everywhere_drop_head' placeholder='Search Countries' style={{border: "none", outline: "none", flex: "1"}}/>
+                                    {/* <input type="text"  /> */}
+                                    {/* <p className='everywhere_drop_head'>Search Countries</p> */}
+                                    <CiSearch style={{ fontSize: "25px", margin: "0", cursor: "pointer" }}/>
+                                
                             </div>
                         </div>
                     </div>

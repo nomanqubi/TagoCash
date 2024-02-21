@@ -13,14 +13,21 @@ export const Hero = () => {
     return (
         <>
             <div className="container-fluid hero">
-                <div className="container pt-5">
-                    <div className="row pb-5">
+                <div className="container">
+                    <div className="row">
                         <div className="col-lg-7">
                             <p className='hero_style'>We are the Future!</p>
-                            <p className='hero_stylish'>Everywhere you go, <br /> <span className='tago_style'>Tago!</span></p>
-                            <p className='hero_detail pt-4'><strong>Tago<span style={{ color: "#0581F8" }}>Cash</span> is Your Global Companion</strong></p>
-                            <p className='tago_stylish pt-4'>Cash is King. Don't Leave Home Without it!</p>
-                            <div className='d-flex gap-4 pt-4'>
+
+                            <p className='hero_stylish'>Where Eever You Go,</p>
+
+                            {/* <div className='ocean'> */}
+                                {/* <div className='wave'></div> */}
+                                <span className='tago_style hero_stylish'>Tago!</span>
+                            {/* </div> */}
+
+                            <p className='hero_detail pt-4'><strong>Tago<span style={{ color:"#0581F8"}}>Cash</span> is Your Global Companion</strong></p>
+                            <p className='tago_stylish pt-2'>Cash is King. Don't Leave Home Without it!</p>
+                            <div className='d-flex gap-4 pt-5'>
                                 <button className='google_play ps-3 pe-3 pt-3 pb-3'>
                                     <img src={Googles} alt="" style={{ width: "100%" }} />
                                 </button>
