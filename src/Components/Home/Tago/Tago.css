@@ -6,17 +6,13 @@
     box-sizing: border-box;
 }
 
-.get_body {
-    background: #F4F9FF;
-}
-
-.get_style {
+.tago_cashies_style {
     font-family: DM Sans;
     font-size: 49px;
     font-weight: 700;
     line-height: 64px;
     letter-spacing: 0em;
-    text-align: center;
+    text-align: left;
     color: var(--darkColor);
 }
 
@@ -27,40 +23,37 @@
     color: var(--whiteColor);
 }
 
-.get_stylish {
-    font-family: DM Sans;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: 0em;
-    text-align: center;
-    color: var(--darkColor);
+.accordion_body {
+    width: 600px;
+    border-radius: 7px;
 }
 
-.get_bodies {
-    width: 100%;
-    border-radius: 13px;
-    background: var(--whiteColor);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.local_style {
+.accordion_style {
     font-family: DM Sans;
-    font-size: 21px;
+    font-size: 27px;
     font-weight: 500;
-    line-height: 28px;
+    line-height: 37px;
     letter-spacing: 0em;
     text-align: left;
-    color: var(--blueColor);
+    color: var(--darkColor);
     margin: 0;
 }
 
-.widthdraw_style {
+.accordion_detail {
     font-family: DM Sans;
-    font-size: 27px;
-    font-weight: 700;
-    line-height: 36px;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 29px;
     letter-spacing: 0em;
+    padding-left: 37px;
     text-align: left;
     color: var(--darkColor);
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion_detail.open {
+    max-height: 200px; 
 }

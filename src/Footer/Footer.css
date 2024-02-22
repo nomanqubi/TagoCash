@@ -1,0 +1,77 @@
+@import url('../index.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer_body {
+    background: var(--primaryColor);
+}
+
+.footer_tago_head {
+    font-family: Poppins;
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0em;
+    padding-left: 35px;
+    text-align: left;
+    color: var(--blackColor);
+    margin: 0;
+}
+
+.footer_copy {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #625353;
+    margin: 0;
+}
+
+.footer_link {
+    font-family: Poppins;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--blueColor);
+}
+
+.footer_links {
+    font-family: DM Sans;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #625353;
+    text-decoration: none;
+}
+
+.footer_social_box {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background: #44A0F9;
+    color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer_bottom_links {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--darkColor);
+}
