@@ -16,75 +16,36 @@ import Ten from '../../../assets/Images/10.png'
 
 export const Sliders = () => {
 
-  const settings = {
-    dots: false,
-    slidesToShow: 4,
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 8000,
-    pauseOnHover: false,
-    cssEase: 'linear',
-    responsive: [
-      {
-        breakpoint: 1400, // XL
-        settings: {
-          slidesToShow: 4,
-        }
-      },
-      {
-        breakpoint: 1200, // LG
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 992, // MD
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 768, // SM
-        settings: {
-          slidesToShow: 1,
-        }
-      },
-      {
-        breakpoint: 576, // XS
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        }
-      },
-      {
-        breakpoint: 480, // XS
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
-
-  return (
+return (
     <>
-      <div className='container-fluid p-0' style={{ background: "#052A4F", height: "200px", overflow: "hidden" }}>
-        <Slider {...settings}>
-          <img src={One} style={{ width: "100%" }} alt="" />
-          <img src={Two} alt="" />
-          <img src={Three} alt="" />
-          <img src={Four} alt="" />
-          <img src={Five} alt="" />
-          <img src={Six} alt="" />
-          <img src={Seven} alt="" />
-          <img src={Eight} alt="" />
-          <img src={Nine} alt="" />
-          <img src={Ten} alt="" />
-        </Slider>
+      <div className='container-fluid p-0 slider_body'>
+        <div className='slider_portion'>
+          <div className='logos-slide'>
+            <img src={One} className="slider-image" alt="" />
+            <img src={Two} className="slider-image" alt="" />
+            <img src={Three} className="slider-image" alt="" />
+            <img src={Four} className="slider-image" alt="" />
+            <img src={Five} className="slider-image" alt="" />
+            <img src={Six} className="slider-image" alt="" />
+            <img src={Seven} className="slider-image" alt="" />
+            <img src={Eight} className="slider-image" alt="" />
+            <img src={Nine} className="slider-image" alt="" />
+            <img src={Ten} className="slider-image" alt="" />
+          </div>
+          <div className='logos-slide'>
+            <img src={One} className="slider-image" alt="" />
+            <img src={Two} className="slider-image" alt="" />
+            <img src={Three} className="slider-image" alt="" />
+            <img src={Four} className="slider-image" alt="" />
+            <img src={Five} className="slider-image" alt="" />
+            <img src={Six} className="slider-image" alt="" />
+            <img src={Seven} className="slider-image" alt="" />
+            <img src={Eight} className="slider-image" alt="" />
+            <img src={Nine} className="slider-image" alt="" />
+            <img src={Ten} className="slider-image" alt="" />
+          </div>
+        </div>
       </div>
-
-
     </>
   )
 }

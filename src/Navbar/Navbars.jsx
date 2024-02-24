@@ -11,8 +11,8 @@ import Polygon from '../assets/Images/Polygon 1.png'
 export const Navbars = () => {
 
   const [activeTab, setActiveTab] = useState('Home');
-  const [isScrolled, setIsScrolled] = useState(false);
   const [show, setShow] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,9 +23,7 @@ export const Navbars = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const isCurrentlyScrolled = scrollTop > 0;
-      setIsScrolled(isCurrentlyScrolled);
+      setScrollPosition(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -37,7 +35,7 @@ export const Navbars = () => {
 
   return (
     <>
-      <nav className={`navbar navbar-expand-lg mt-3 ${isScrolled ? 'hidden' : 'visible'}`}>
+      <nav className={`navbar navbar-expand-lg ${scrollPosition > 0 ? 'scrolled' : ''}`}>
         <div className="container nav_body">
           <img src={Logo} alt="" />
           <div className='d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block'>

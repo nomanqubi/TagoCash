@@ -5,12 +5,13 @@ import Vectorone from '../../../assets/Images/Vector (1).png'
 import Line from '../../../assets/Images/Rectangle 13.png'
 import Lineone from '../../../assets/Images/Rectangle 14.png'
 import Lottie from 'react-lottie';
-import Coin from '../../../../Coin.json';
-import Auth from '../../../../Auth.json';
-import Eye from '../../../../Eye.json'
-import Tick from '../../../../Tick.json'
-import Flash from '../../../../Flash.json'
-import Lock from '../../../../Lock.json'
+import Coin from '../../../assets/lottie/Coin.json';
+import Auth from '../../../assets/lottie/Auth.json';
+import Eye from '../../../assets/lottie/Eye.json'
+import Tick from '../../../assets/lottie/Tick.json'
+import Flash from '../../../assets/lottie/Flash.json'
+import Lock from '../../../assets/lottie/Lock.json'
+import Clock from '../../../assets/lottie/clock.json'
 
 export const Fasst = () => {
 
@@ -50,10 +51,10 @@ export const Fasst = () => {
         }
     };
 
-    const flashOptions = {
+    const clockOptions = {
         loop: true,
         autoplay: true,
-        animationData: Flash,
+        animationData: Clock,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
         }
@@ -61,7 +62,7 @@ export const Fasst = () => {
 
     const cardData = [
         {
-            iconOptions: flashOptions,
+            iconOptions: clockOptions,
             title: "Fast",
             subTitle: "Near real-time transaction"
         },

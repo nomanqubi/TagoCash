@@ -46,9 +46,9 @@
 
 .local_style {
     font-family: DM Sans;
-    font-size: 21px;
-    font-weight: 500;
-    line-height: 28px;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 36px;
     letter-spacing: 0em;
     text-align: left;
     color: var(--blueColor);
@@ -57,9 +57,9 @@
 
 .widthdraw_style {
     font-family: DM Sans;
-    font-size: 27px;
-    font-weight: 700;
-    line-height: 36px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 28px;
     letter-spacing: 0em;
     text-align: left;
     color: var(--darkColor);

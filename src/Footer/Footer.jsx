@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+import { NavLink } from 'react-router-dom'
 import Logo from '../assets/Images/logo.png'
 import Googles from '../assets/Images/googles.png'
 import Appstore from '../assets/Images/app_store.png'
@@ -33,11 +34,11 @@ export const Footer = () => {
                   <div className="d-flex flex-column">
                     <p className='footer_link'>Quick links</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
-                      <a href="" className='footer_links'>Home</a>
-                      <a href="" className='footer_links'>About</a>
-                      <a href="" className='footer_links'>Exchange Rate</a>
-                      <a href="" className='footer_links'>Security</a>
-                      <a href="" className='footer_links'>Partners</a>
+                      <NavLink to="/" className='footer_links'>Home</NavLink>
+                      <NavLink to="/" className='footer_links'>About</NavLink>
+                      <NavLink to="/" className='footer_links'>Exchange Rate</NavLink>
+                      <NavLink to="/" className='footer_links'>Security</NavLink>
+                      <NavLink to="/" className='footer_links'>Partners</NavLink>
                     </ul>
                   </div>
                 </div>
@@ -45,9 +46,9 @@ export const Footer = () => {
                   <div className="d-flex flex-column">
                     <p className='footer_link'>News</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
-                      <a href="" className='footer_links'>Blog</a>
-                      <a href="" className='footer_links'>FAQ</a>
-                      <a href="" className='footer_links'>Presse kit</a>
+                      <NavLink to="/" className='footer_links'>Blog</NavLink>
+                      <NavLink to="/" className='footer_links'>FAQ</NavLink>
+                      <NavLink to="/" className='footer_links'>Presse kit</NavLink>
                     </ul>
                   </div>
                 </div>
@@ -55,9 +56,9 @@ export const Footer = () => {
                   <div className="d-flex flex-column">
                     <p className='footer_link'>Others</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
-                      <a href="" className='footer_links'>How it Works?</a>
-                      <a href="" className='footer_links'>Why TAGO?</a>
-                      <a href="" className='footer_links'>Benefits with Tago</a>
+                      <NavLink to="/" className='footer_links'>How it Works?</NavLink>
+                      <NavLink to="/" className='footer_links'>Why TAGO?</NavLink>
+                      <NavLink to="/" className='footer_links'>Benefits with Tago</NavLink>
                     </ul>
                     <div className='d-flex gap-2 mt-3'>
                       <div className='footer_social_box'>

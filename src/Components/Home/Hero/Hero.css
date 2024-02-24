@@ -25,7 +25,7 @@
 }
 
 .hero_stylish {
-    font-family: DM Sans;
+    /* font-family: DM Sans; */
     font-size: 76px;
     font-weight: 700;
     line-height: 99px;
@@ -46,41 +46,22 @@
 }
 
 .tago_style {
-    /* display: inline-block; */
+    display: inline-block;
     border-radius: 8px;
     background: #0581F8;
-    /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; */
     color: white;
-    /* color: black; */
     padding: 4px;
-    
+    animation: shakeHands 2s ease infinite alternate;
 }
-.ocean { 
-    height: 5%;
-    width:50%;
-    position:relative;
-    bottom:0;
-    /* overflow: hidden; */
-    left:0;
-    /* background: black; */
-  }
-.wave {
-        /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;  */
-    /* position: absolute;
-    top: -198px;
-    width: 6400px;
-    height: 198px; */
-    /* animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite; */
-    /* transform: translate3d(0, 0, 0); */
-}
-@keyframes wave {
+
+@keyframes shakeHands {
     0% {
-      margin-left: 0;
+      transform: rotate(0deg);
     }
     100% {
-      margin-left: -1600px;
+      transform: rotate(10deg);
     }
-}
+  }
   
 
 @keyframes bell {

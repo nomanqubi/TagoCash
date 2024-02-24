@@ -17,7 +17,12 @@ export const Frequently = () => {
     ]);
 
     const toggleAccordion = (index) => {
-        setAccordionItems(prevItems => prevItems.map((item, i) => i === index ? { ...item, isOpen: !item.isOpen } : item));
+        setAccordionItems(prevItems =>
+            prevItems.map((item, i) => ({
+                ...item,
+                isOpen: i === index ? !item.isOpen : false // Toggle the clicked item and close others
+            }))
+        );
     };
 
     const AccordionItem = ({ isOpen, toggleAccordion, head, title, detail }) => {

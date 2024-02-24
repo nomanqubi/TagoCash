@@ -1,8 +1,19 @@
 import React from 'react'
 import './GetMore.css'
 import Group from '../../../assets/Images/Group 34320.png'
+import Lottie from 'react-lottie';
+import Mobile from '../../../assets/lottie/Mobile.json';
 
 export const GetMore = () => {
+
+  const mobileOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: Mobile,
+    rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+    }
+};
   return (
     <>
       <div className="container-fluid get_body pb-5">
@@ -29,7 +40,8 @@ export const GetMore = () => {
               </div>
             </div>
             <div className="col-lg-6">
-              <img src={Group} alt="" style={{width: "100%"}}/>
+              {/* <img src={Group} alt="" style={{width: "100%"}}/> */}
+              <Lottie options={mobileOptions} height={400} width={400} />
             </div>
           </div>
         </div>
