@@ -123,12 +123,12 @@ export const Everywhere = () => {
                                                 <input
                                                     type="radio"
                                                     name="radiobutton"
-                                                    checked={selectedOption === "Craditcard Deposit"}
-                                                    onChange={() => handleRadioChange("Craditcard Deposit")}
+                                                    checked={selectedOption === "Creditcard Deposit"}
+                                                    onChange={() => handleRadioChange("Creditcard Deposit")}
                                                     style={{ display: "none" }}
                                                 />
                                                 <span className="check_find">
-                                                    {selectedOption === "Craditcard Deposit" ? <IoIosRadioButtonOn className='radio_icon' /> : <IoIosRadioButtonOff className='radio_icon' />}
+                                                    {selectedOption === "Craeitcard Deposit" ? <IoIosRadioButtonOn className='radio_icon' /> : <IoIosRadioButtonOff className='radio_icon' />}
                                                 </span>
                                                 <span className='drop_option ms-2'>Creditcard Deposit</span>
                                             </label>
