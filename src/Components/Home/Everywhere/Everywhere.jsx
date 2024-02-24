@@ -128,7 +128,7 @@ export const Everywhere = () => {
                                                     style={{ display: "none" }}
                                                 />
                                                 <span className="check_find">
-                                                    {selectedOption === "Craeitcard Deposit" ? <IoIosRadioButtonOn className='radio_icon' /> : <IoIosRadioButtonOff className='radio_icon' />}
+                                                    {selectedOption === "Creditcard Deposit" ? <IoIosRadioButtonOn className='radio_icon' /> : <IoIosRadioButtonOff className='radio_icon' />}
                                                 </span>
                                                 <span className='drop_option ms-2'>Creditcard Deposit</span>
                                             </label>
