@@ -145,6 +145,7 @@
     left: 48%;
 }
 
+
 .elipse_style,
 .elipse_styles,
 .elipse_styless,
@@ -231,6 +232,20 @@
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+    .hero_stylish {
+        /* font-family: DM Sans; */
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 99px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--blackColor);
+        margin: 0;
+    }
+
+    .tago_style{
+        color: var(--whiteColor);
+    }
     .hero_div_stlye {
         margin-top: 60px;
     }
@@ -270,6 +285,9 @@
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    .hero {
+        padding-top: 8rem;
+    }
     .hero_div_stlye {
         display: flex;
         justify-content: center;
@@ -315,6 +333,25 @@
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+    .hero {
+        padding-top: 8rem;
+    }
+
+    .hero_stylish {
+        /* font-family: DM Sans; */
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 99px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--blackColor);
+        margin: 0;
+    }
+
+    .tago_style{
+        color: var(--whiteColor);
+    }
+
     .hero_div_stlye {
         display: flex;
         justify-content: center;
@@ -360,6 +397,10 @@
 }
 
 @media (max-width: 576px) {
+    .hero {
+        padding-top: 8rem;
+    }
+
     .hero_div_stlye {
         display: flex;
         justify-content: center;
@@ -400,14 +441,18 @@
     }
 
     .hero_stylish {
-        font-family: DM Sans;
-        font-size: 65px;
+        /* font-family: DM Sans; */
+        font-size: 35px;
         font-weight: 700;
         line-height: 99px;
         letter-spacing: 0em;
         text-align: left;
         color: var(--blackColor);
         margin: 0;
+    }
+
+    .tago_style{
+        color: var(--whiteColor);
     }
 
     .hero_second {

@@ -64,3 +64,34 @@
     text-align: left;
     color: var(--darkColor);
 }
+
+#lottie-icon{
+    width: 400px;
+    height: 400px;
+}
+
+.get_lottie{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .get_lottie{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .get_lottie{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width:576px) {
+    #lottie-icon {
+        width: 100%;
+    }
+
+}

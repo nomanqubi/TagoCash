@@ -1,7 +1,7 @@
 const countryList = {
-    "AED" : "UAE",
-    "XCD" : "AG",
+    "AED" : "AE",
     "AFN" : "AF",
+    "XCD" : "AG",
     "ALL" : "AL",
     "AMD" : "AM",
     "ANG" : "AN",
@@ -158,6 +158,7 @@ const countryList = {
     "ZAR" : "ZA",
     "ZMK" : "ZM",
     "ZWD" : "ZW"
+
 }
 
 export default countryList;

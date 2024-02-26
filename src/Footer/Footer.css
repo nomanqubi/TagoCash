@@ -75,3 +75,33 @@
     text-align: left;
     color: var(--darkColor);
 }
+
+.footer_name{
+    display: flex;
+    gap: 3rem;
+    padding-left: 60px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .footer_name{
+        display: flex;
+        gap: 1.3rem;
+        padding-left: 50px;
+    } 
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .footer_name{
+        display: flex;
+        gap: 2rem;
+        padding-left: 50px;
+    } 
+}
+
+@media (max-width: 576px) {
+    .footer_name{
+        display: flex;
+        gap: 1rem;
+        padding-left: 0px;
+    } 
+}

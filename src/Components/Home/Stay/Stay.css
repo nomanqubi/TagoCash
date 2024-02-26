@@ -48,3 +48,15 @@
     letter-spacing: 0em;
     text-align: center;
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .stay_cards{
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stay_cards{
+        margin-bottom: 1rem;
+    }
+}

@@ -25,7 +25,7 @@ export const Exchange = () => {
 
     return (
         <>
-            <div className="container-fluid exchange_body mt-5 p-0 pb-5 position-relative">
+            <div className="container-fluid exchange_body mt-5 pb-5 position-relative">
                 <div className="container pt-5">
                     <div className="row">
                         <div className="col-lg-6 cols_gap pt-4">
@@ -45,7 +45,7 @@ export const Exchange = () => {
                                         <img src={Flash} alt="" />
                                     </div>
                                     <div className="d-flex flex-column">
-                                        <p className='exchanges_content'>Instant Wallet Transfer</p>
+                                        <p className='exchanges_content'>Instant Transfer Delivery</p>
                                         <p className='exchange_content'>If you lose your wallet key, we can help you recover. We've <br /> built our own account recovery system.</p>
                                     </div>
                                 </div>
@@ -54,13 +54,13 @@ export const Exchange = () => {
                                         <img src={Easy} alt="" />
                                     </div>
                                     <div className="d-flex flex-column">
-                                        <p className='exchanges_content'>Easy & Intuitive Interface</p>
+                                        <p className='exchanges_content'>Safe and Secure</p>
                                         <p className='exchange_content'>Safe and easy to use 2-Factor Authentication process, <br /> including FaceID and FingerprintID</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6 d-flex justify-content-center align-items-center exchangerate pt-4 pb-5">
+                        <div className="col-lg-6 cols_gap exchangerate pt-4 pb-5">
                             <div className="exchangerate_box ps-4 pe-4 pt-4 pb-4 position-relative">
                                 <p className='exchangerate_content'>You send exactly</p>
                                 <div className='exchange_input ps-3'>

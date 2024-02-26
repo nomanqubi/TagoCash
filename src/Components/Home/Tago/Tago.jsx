@@ -46,29 +46,31 @@ export const Tago = () => {
 
     return (
         <>
-            <div className="container">
-                <div className="row pt-5">
-                    <div className="col">
-                        <p className='tago_cashies_style'>Tago<span style={{ color: "#1B3D9D" }}>Cash </span>
-                            is better than <span className='get_tago'>Cash!</span>
-                        </p>
+            <div className="container-fluid">
+                <div className="container">
+                    <div className="row pt-5">
+                        <div className="col">
+                            <p className='tago_cashies_style'>Tago<span style={{ color: "#1B3D9D" }}>Cash </span>
+                                is better than <span className='get_tago'>Cash!</span>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-6">
-                        <img src={Group} alt="" style={{ width: "425px", height: "512px" }} />
-                    </div>
-                    <div className="col-lg-6 d-flex align-items-center justify-content-center">
-                        <div className='d-flex gap-4 flex-column'>
-                            {accordionItems.map((item, index) => (
-                                <AccordionItem
-                                    key={index}
-                                    isOpen={item.isOpen}
-                                    toggleAccordion={() => toggleAccordion(index)}
-                                    title={item.title}
-                                    detail={item.detail}
-                                />
-                            ))}
+                    <div className="row">
+                        <div className="col-lg-6 img_div">
+                            <img src={Group} alt="" className='tago_img' />
+                        </div>
+                        <div className="col-lg-6 d-flex align-items-center justify-content-center tago_accordion">
+                            <div className='d-flex gap-4 flex-column'>
+                                {accordionItems.map((item, index) => (
+                                    <AccordionItem
+                                        key={index}
+                                        isOpen={item.isOpen}
+                                        toggleAccordion={() => toggleAccordion(index)}
+                                        title={item.title}
+                                        detail={item.detail}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -5,17 +5,34 @@ import Vectorone from '../../../assets/Images/vectorfour.png'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import USA from '../../../assets/Images/usa.png'
+import Afg from '../../../assets/Images/Afg.png'
+import Alb from '../../../assets/Images/Alb.png'
+import Ang from '../../../assets/Images/Ang.png'
+import Angu from '../../../assets/Images/Angu.png'
+import Ant from '../../../assets/Images/Ant.png'
+import Arg from '../../../assets/Images/Arg.png'
 import Arrow from '../../../assets/Images/arrow.png'
 import Arrowone from '../../../assets/Images/arrowone.png'
 import { RiArrowDropUpLine } from "react-icons/ri";
 import { IoIosRadioButtonOff } from "react-icons/io";
 import { IoIosRadioButtonOn } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
+import countryList from '../Exchange/Countrylist';
 
 export const Everywhere = () => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage the visibility of the dropdown
     const [selectedOption, setSelectedOption] = useState(null); // State to store the selected option
+    const [displayCount, setDisplayCount] = useState(3); // State to track the number of rows to display initially
+    const [expandedCountry, setExpandedCountry] = useState(null);
+
+    const handleCountryClick = (currency) => {
+        setExpandedCountry(expandedCountry === currency ? null : currency);
+    };
+
+    const handledClick = () => {
+        setDisplayCount(Object.keys(countryList).length / 3); // Set display count to total number of rows
+    };
 
     const handleRadioChange = (id) => {
         setSelectedOption(id);
@@ -26,6 +43,14 @@ export const Everywhere = () => {
         setSelectedOption(null); // Clear the selected option
     };
 
+    function chunk(array, size) {
+        const chunks = [];
+        for (let i = 0; i < array.length; i += size) {
+            chunks.push(array.slice(i, i + size));
+        }
+        return chunks;
+    }
+
 
     return (
         <>
@@ -35,11 +60,11 @@ export const Everywhere = () => {
                     <div className="row">
                         <div className="col">
                             <div className='everywhere_style pt-4'>Everywhere You Go <br />
-                            <span className='everywhere_stylish mt-5'>TagoCash</span></div>
+                                <span className='everywhere_stylish mt-5'>TagoCash</span></div>
                         </div>
                     </div>
                     <div className="row mt-3 justify-content-center">
-                        <div className="col-md-4"
+                        <div className="col-md-4 col-sm-6"
                             onMouseEnter={() => setIsDropdownOpen(true)}
                             onMouseLeave={() => setIsDropdownOpen(false)}>
                             <div className="search_input_container">
@@ -137,7 +162,7 @@ export const Everywhere = () => {
                                 </div>
                             )}
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-4 col-sm-6 search_div">
                             <div className="search_input_container">
                                 <input type="text" className="search_input ps-3 pe-3" placeholder="Search Countries" />
                                 <CiSearch className="search_icon me-3" />
@@ -153,132 +178,55 @@ export const Everywhere = () => {
                                         <IoIosClose style={{ fontSize: "25px", cursor: "pointer" }} onClick={handleClearSelection} />
                                     </p>
                                 )}
-                                {/* <p className='select_option'>{selectedOption}<IoIosClose style={{ fontSize: "25px" }} /></p> */}
                             </div>
                         </div>
                     </div>
-                    <div className="row mt-3">
-                        <div className="col-md-4">
-                            <div className='every_box ps-3'>
-                                <div className='d-flex align-items-center'>
-                                    <div style={{ borderRight: "1px solid #D9D9D9", paddingRight: "7px", width: "10%" }}>
-                                        <img src={USA} alt="" />
-                                    </div>
-                                    <div className='d-flex flex-column gap-1' style={{ width: "75%" }}>
-                                        <div className='d-flex gap-1'>
-                                            <div className='every_circle ms-3' />
-                                            <p className='every_cash'>Bank Deposit</p>
-                                            <div className='every_circle ms-3' />
-                                            <p className='every_cash'>Bank Withdraw</p>
-                                            <div className='every_circle ms-3' />
-                                            <p className='every_cash'>Cash Withdraw</p>
+                    {chunk(Object.keys(countryList), 3).map((chunk, index) => (
+                        index < displayCount && (
+                            <div key={index} className="row">
+                                {chunk.map(currency => (
+                                    <div key={currency} className="col-lg-4 mb-3">
+                                        <div className={expandedCountry === currency ? 'every_box ps-3' : 'every_box d-flex align-items-center ps-3 pe-3'}>
+                                            <div className={expandedCountry === currency ? 'd-flex align-items-center' : 'd-flex justify-content-between align-items-center w-100'}>
+                                                <div className={expandedCountry === currency ? 'count_style' : ''}>
+                                                    <img src={`https://flagcdn.com/48x36/${countryList[currency].toLowerCase()}.png`} alt={countryList[currency]} className='img_style' />
+                                                    <span className={expandedCountry === currency ? 'd-none' : 'everywhere_drop_head ps-2'}>{currency}</span>
+                                                </div>
+                                                {expandedCountry === currency && (
+                                                    <div className='d-flex flex-column gap-1' style={{ width: "75%" }}>
+                                                        <div className='d-flex gap-1'>
+                                                            <div className='every_circle ms-3' />
+                                                            <p className='every_cash'>Bank Deposit</p>
+                                                            <div className='every_circle ms-3' />
+                                                            <p className='every_cash'>Bank Withdraw</p>
+                                                            <div className='every_circle ms-3' />
+                                                            <p className='every_cash'>Cash Withdraw</p>
+                                                        </div>
+                                                        <div className='d-flex gap-1 mt-1 ms-3'>
+                                                            <div className='every_circle' />
+                                                            <p className='every_cash'>Cash Deposit</p>
+                                                            <div className='every_circle ms-3' />
+                                                            <p className='every_cash'>Creditcard Deposit</p>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                                <button className={expandedCountry === currency ? 'every_box_one' : 'cash_btn'} onClick={() => handleCountryClick(currency)}>
+                                                    <img src={expandedCountry === currency ? Arrowone : Arrow} alt="" />
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div className='d-flex gap-1 mt-1 ms-3'>
-                                            <div className='every_circle' />
-                                            <p className='every_cash'>Cash Deposit</p>
-                                            <div className='every_circle ms-3' />
-                                            <p className='every_cash'>Creditcard Deposit</p>
-                                        </div>
                                     </div>
-                                    <div className='every_box_one d-flex justify-content-center align-items-center'>
-                                        <img src={Arrowone} alt="" />
-                                    </div>
-                                </div>
+                                ))}
                             </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3 pe-3'>
-                                <div className='d-flex justify-content-between align-items-center w-100'>
-                                    <div>
-                                        <img src={USA} alt="" />
-                                        <span className='everywhere_drop_head ps-2'>USA</span>
-                                    </div>
-                                    <div>
-                                        <img src={Arrow} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3 pe-3'>
-                                <img src={USA} alt="" />
-                                <span className='everywhere_drop_head ps-2'>USA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-3">
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3'>
-                                <div className='d-flex justify-content-between align-items-center w-100'>
-                                    <div>
-                                        <img src={USA} alt="" />
-                                        <span className='everywhere_drop_head ps-2'>USA</span>
-                                    </div>
-                                    <div className='every_box_one d-flex justify-content-center align-items-center'>
-                                        <img src={Arrowone} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3 pe-3'>
-                                <div className='d-flex justify-content-between align-items-center w-100'>
-                                    <div>
-                                        <img src={USA} alt="" />
-                                        <span className='everywhere_drop_head ps-2'>USA</span>
-                                    </div>
-                                    <div>
-                                        <img src={Arrow} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3 pe-3'>
-                                <img src={USA} alt="" />
-                                <span className='everywhere_drop_head ps-2'>USA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-3">
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3'>
-                                <div className='d-flex justify-content-between align-items-center w-100'>
-                                    <div>
-                                        <img src={USA} alt="" />
-                                        <span className='everywhere_drop_head ps-2'>USA</span>
-                                    </div>
-                                    <div className='every_box_one d-flex justify-content-center align-items-center'>
-                                        <img src={Arrowone} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3 pe-3'>
-                                <div className='d-flex justify-content-between align-items-center w-100'>
-                                    <div>
-                                        <img src={USA} alt="" />
-                                        <span className='everywhere_drop_head ps-2'>USA</span>
-                                    </div>
-                                    <div>
-                                        <img src={Arrow} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className='every_box d-flex align-items-center ps-3 pe-3'>
-                                <img src={USA} alt="" />
-                                <span className='everywhere_drop_head ps-2'>USA</span>
-                            </div>
-                        </div>
-                    </div>
+                        )
+                    ))}
                     <div className="row mt-3">
                         <div className="col d-flex justify-content-center">
-                            <button className='everywhere_btn'>
-                                See More
-                            </button>
+                            {displayCount === 3 && (
+                                <button className='everywhere_btn' onClick={handledClick}>
+                                    See More
+                                </button>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -79,23 +79,28 @@ export const Navbars = () => {
           <button type="button" className='close_btn' onClick={handleClose}><AiFillCloseSquare /></button>
         </div>
         <div className='d-flex justify-content-center align-items-center'>
-          <ul className="navbar-nav gap-4">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Home</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Features</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Easy & Safe</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Togo Works</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">Custom Support</NavLink>
-            </li>
-          </ul>
+        <ul className="navbar-nav gap-4 ">
+              <li className="nav-item">
+                <NavLink className={`nav-link ${activeTab === 'Home' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Home')}>Home</NavLink>
+                {activeTab === 'Home' && <img src={Polygon} alt="" />}
+              </li>
+              <li className="nav-item">
+                <NavLink className={`nav-link ${activeTab === 'Features' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Features')}>Features</NavLink>
+                {activeTab === 'Features' && <img src={Polygon} alt="" />}
+              </li>
+              <li className="nav-item">
+                <NavLink className={`nav-link ${activeTab === 'Easy & Safe' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Easy & Safe')}>Easy & Safe</NavLink>
+                {activeTab === 'Easy & Safe' && <img src={Polygon} alt="" />}
+              </li>
+              <li className="nav-item">
+                <NavLink className={`nav-link ${activeTab === 'Togo Works' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Togo Works')}>Togo Works</NavLink>
+                {activeTab === 'Togo Works' && <img src={Polygon} alt="" />}
+              </li>
+              <li className="nav-item">
+                <NavLink className={`nav-link ${activeTab === 'Custom Support' ? 'actives' : ''}`} to="/" onClick={() => handleNavLinkClick('Custom Support')}>Custom Support</NavLink>
+                {activeTab === 'Custom Support' && <img src={Polygon} alt="" />}
+              </li>
+            </ul>
         </div>
       </Offcanvas>
     </>

@@ -102,23 +102,24 @@ export const Fasst = () => {
 
     return (
         <>
-            <div className="container mt-5">
-                <div className="row">
-                    <div className="col">
-                        <div className='fasst_body pb-5'>
-                            <img src={Vector} alt="" className='vector_style' />
-                            <img src={Vectorone} alt="" className='vector_stylish' />
-                            <p className='fasst_style'>TagoCash is <span className='fasst_box'>FASST</span></p>
-                            <div className='d-flex justify-content-center mt-4'>
-                                <img src={Lineone} alt="" />
-                                <img src={Line} alt="" style={{ width: "5%" }} />
-                            </div>
-                            <div className="row m-0 mt-4">
-                                {cardData.map((card, index) => (
-                                    <Card key={index} {...card} isLast={index === cardData.length - 1} className="m-0 p-0" />
-                                ))}
-                            </div>
-                            {/* <div className="row m-0 mt-4">
+            <div className="container-fluid">
+                <div className="container mt-5">
+                    <div className="row">
+                        <div className="col">
+                            <div className='fasst_body pb-5'>
+                                <img src={Vector} alt="" className='vector_style' />
+                                <img src={Vectorone} alt="" className='vector_stylish' />
+                                <p className='fasst_style'>TagoCash is <span className='fasst_box'>FASST</span></p>
+                                <div className='d-flex justify-content-center mt-4'>
+                                    <img src={Lineone} alt="" />
+                                    <img src={Line} alt="" style={{ width: "5%" }} />
+                                </div>
+                                <div className="row m-0 mt-4">
+                                    {cardData.map((card, index) => (
+                                        <Card key={index} {...card} isLast={index === cardData.length - 1} className="m-0 p-0" />
+                                    ))}
+                                </div>
+                                {/* <div className="row m-0 mt-4">
                                 <div className="col">
                                     <div className='d-flex justify-content-center align-items-center' style={{ height: "110px", width: "100%" }}>
                                         <div className='icon_box'>
@@ -165,6 +166,7 @@ export const Fasst = () => {
                                     <p className='tago_stylish' style={{ textAlign: "center" }}>No hidden fees,<br />You pay what you see</p>
                                 </div>
                             </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>

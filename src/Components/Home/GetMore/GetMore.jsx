@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect,useState} from 'react'
 import './GetMore.css'
 import Group from '../../../assets/Images/Group 34320.png'
 import Lottie from 'react-lottie';
@@ -6,14 +6,16 @@ import Mobile from '../../../assets/lottie/Mobile.json';
 
 export const GetMore = () => {
 
-  const mobileOptions = {
+  const [mobileOptions, setMobileOptions] = useState({
     loop: true,
     autoplay: true,
     animationData: Mobile,
-    rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-    }
-};
+    rendererSettings: {}
+});
+
+
+
+
   return (
     <>
       <div className="container-fluid get_body pb-5">
@@ -39,9 +41,10 @@ export const GetMore = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6">
-              {/* <img src={Group} alt="" style={{width: "100%"}}/> */}
-              <Lottie options={mobileOptions} height={400} width={400} />
+            <div className="col-lg-6 get_lottie">
+              <div id='lottie-icon'>
+              <Lottie options={mobileOptions}  />
+              </div>
             </div>
           </div>
         </div>

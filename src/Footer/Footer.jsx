@@ -30,7 +30,7 @@ export const Footer = () => {
             </div>
             <div className="col-lg-6">
               <div className="row">
-                <div className="col-4">
+                <div className="col-6">
                   <div className="d-flex flex-column">
                     <p className='footer_link'>Quick links</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
@@ -42,7 +42,7 @@ export const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="col-4">
+                <div className="col-6">
                   <div className="d-flex flex-column">
                     <p className='footer_link'>News</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
@@ -52,7 +52,7 @@ export const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="col-4">
+                <div className="col-6">
                   <div className="d-flex flex-column">
                     <p className='footer_link'>Others</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
@@ -74,7 +74,7 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div className='d-flex gap-5' style={{paddingLeft: "60px"}}>
+              <div className='footer_name'>
                 <p className='footer_bottom_links'>Terms & Condtion</p>
                 <p className='footer_bottom_links'>Privacy Policy</p>
                 <p className='footer_bottom_links'>Cookie Policy</p>

@@ -14,7 +14,7 @@ export const Stay = () => {
                     </div>
                 </div>
                 <div className="row mt-3">
-                    <div className="col-md-4">
+                    <div className="col-md-4 stay_cards">
                         <div className='stay_card'>
                             <div className='d-flex flex-column'>
                                 <img src={Group} alt="" />
@@ -28,7 +28,7 @@ export const Stay = () => {
                         </div>
                     </div>
 
-                    <div className="col-md-4">
+                    <div className="col-md-4 stay_cards">
                         <div className='stay_card'>
                             <div className='d-flex flex-column'>
                                 <img src={Group} alt="" />

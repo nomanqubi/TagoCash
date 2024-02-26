@@ -16,6 +16,8 @@ export const Frequently = () => {
         { isOpen: false, head: "06", title: "Is TagoCash a free service?", detail: "For Tago Fan users, TagoCash is free to send and to receive for the first 30 days or for as long as there is more than $30 in your wallet. Otherwise, you will incur a $.50 charge for any transfer (send) beyond the monthly allocated 1 free transfer. You will have unlimited ability to receive from other users for free." }
     ]);
 
+    const [accordionItemsToShow, setAccordionItemsToShow] = useState(4);
+
     const toggleAccordion = (index) => {
         setAccordionItems(prevItems =>
             prevItems.map((item, i) => ({
@@ -66,7 +68,7 @@ export const Frequently = () => {
                     <div className="row pt-3">
                         <div className="col-lg-6">
                             <div className='d-flex flex-column gap-3'>
-                            {accordionItems.map((item, index) => (
+                            {accordionItems.slice(0, accordionItemsToShow).map((item, index) => (
                                 <AccordionItem
                                     key={index}
                                     isOpen={item.isOpen}
@@ -76,7 +78,9 @@ export const Frequently = () => {
                                     detail={item.detail}
                                 />
                             ))}
-                            <button className='freq_btn'>See More</button>
+                            {accordionItems.length > accordionItemsToShow && (
+                            <button className='freq_btn' onClick={() => setAccordionItemsToShow(accordionItems.length)}>See More</button>
+                            )}
                             </div> 
                         </div>
                         <div className="col-lg-6 quest_img">

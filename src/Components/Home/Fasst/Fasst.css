@@ -86,3 +86,14 @@
 .card_line {
     border-right: 3px solid #CDE1FF;
 }
+
+@media (max-width: 576px) {
+    .fasst_box {
+        border-radius: 7px;
+        background: var(--blueColor);
+        color: var(--whiteColor);
+        padding: 7px;
+        margin-top: 5px;
+    }
+}
+

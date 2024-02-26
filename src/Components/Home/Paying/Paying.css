@@ -61,5 +61,50 @@
     letter-spacing: 0em;
     text-align: left;
     color: var(--whiteColor);
+}
 
+.paying_img{
+    width: 500px;
+    height: 475px;
+}
+
+.paying_col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paying_pading{
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .paying_pading{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .paying_pading{
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .paying_img{
+        width: 400px;
+        height: 375px;
+    }  
+    .paying_col{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+    .paying_pading{
+        padding-left: 1.5rem;
+        padding-right: 2rem;
+    }
 }
