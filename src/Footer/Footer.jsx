@@ -74,7 +74,7 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div className='footer_name'>
+              <div className='footer_name mt-2'>
                 <p className='footer_bottom_links'>Terms & Condtion</p>
                 <p className='footer_bottom_links'>Privacy Policy</p>
                 <p className='footer_bottom_links'>Cookie Policy</p>
