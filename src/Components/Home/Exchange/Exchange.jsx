@@ -13,6 +13,24 @@ import Easy from '../../../assets/Images/image 32.png'
 export const Exchange = () => {
 
     const [selectedCountries, setSelectedCountries] = useState({});
+    const [inputFocus, setInputFocus] = useState({
+        input1: false,
+        input2: false,
+    });
+
+    const handleInputFocus = (input) => {
+        setInputFocus((prev) => ({
+            ...prev,
+            [input]: true,
+        }));
+    };
+
+    const handleInputBlur = (input) => {
+        setInputFocus((prev) => ({
+            ...prev,
+            [input]: false,
+        }));
+    };
 
     function loadFlag(event) {
         const countryCode = event.target.value;
@@ -63,17 +81,30 @@ export const Exchange = () => {
                         <div className="col-lg-6 cols_gap exchangerate pt-4 pb-5">
                             <div className="exchangerate_box ps-4 pe-4 pt-4 pb-4 position-relative">
                                 <p className='exchangerate_content'>You send exactly</p>
-                                <div className='exchange_input ps-3'>
-                                    <div className='exchange_box_one pe-2'>
-                                        <input type="text" className='exchangerate_input' />
+                                <div className={inputFocus.input1 ? 'exchange_input focused ps-3' : 'exchange_input ps-3'}>
+                                    <div className={inputFocus.input1 ? 'exchange_box_one focused pe-3' : 'exchange_box_one pe-3'}>
+                                        <input
+                                            type="text"
+                                            className='exchangerate_input'
+                                            onFocus={() => handleInputFocus('input1')}
+                                            onBlur={() => handleInputBlur('input1')}
+                                        />
                                     </div>
                                     <div className='exchange_box_two'>
                                         <img
-                                            src={selectedCountries.dropdown1 ? `https://flagcdn.com/48x36/${countryList[selectedCountries.dropdown1].toLowerCase()}.png` : 'https://flagcdn.com/48x36/ae.png'}
+                                            src={selectedCountries.dropdown1 ?
+                                                `https://flagcdn.com/48x36/${countryList[selectedCountries.dropdown1].toLowerCase()}.png`
+                                                : 'https://flagcdn.com/48x36/ae.png'}
                                             style={{ width: "18%" }}
                                             alt="Flag"
                                         />
-                                        <select id="dropdown1" className='drop_style_head' onChange={loadFlag} value={selectedCountries.dropdown1 || ''}>
+                                        <select id="dropdown1"
+                                            className={inputFocus.input1 ? 'drop_style_head focused' : 'drop_style_head'}
+                                            onChange={loadFlag}
+                                            value={selectedCountries.dropdown1 || ''}
+                                            onFocus={() => handleInputFocus('input1')}
+                                            onBlur={() => handleInputBlur('input1')}
+                                        >
                                             {Object.keys(countryList).map((currencyCode) => (
                                                 <option key={currencyCode} value={currencyCode}>
                                                     {countryList[currencyCode]}
@@ -84,18 +115,36 @@ export const Exchange = () => {
                                 </div>
                                 <img src={Circle} alt="" className='circle_img' />
                                 <p className='exchangerate_content mt-4'>Receipient gets</p>
-                                <div className='exchange_input ps-3' style={{ border: "1px solid #E1E1E1" }}>
-                                    <div className='exchange_box_one pe-2'>
-                                        <input type="text" className='exchangerate_input' />
-                                        <input type="text" className='exchange_input_one' />
+                                <div className={inputFocus.input2 ? 'exchange_input focused ps-3' : 'exchange_input ps-3'}>
+                                    <div className={inputFocus.input2 ? 'exchange_box_one focused pe-3' : 'exchange_box_one pe-3'}>
+                                        <input
+                                            type="text"
+                                            className='exchangerate_input'
+                                            onFocus={() => handleInputFocus('input2')}
+                                            onBlur={() => handleInputBlur('input2')}
+                                        />
+                                        <input type="text"
+                                            className='exchange_input_one'
+                                            onFocus={() => handleInputFocus('input2')}
+                                            onBlur={() => handleInputBlur('input2')}
+                                        />
                                     </div>
                                     <div className='exchange_box_two'>
                                         <img
-                                            src={selectedCountries.dropdown2 ? `https://flagcdn.com/48x36/${countryList[selectedCountries.dropdown2].toLowerCase()}.png` : 'https://flagcdn.com/48x36/ae.png'}
+                                            src={selectedCountries.dropdown2 ?
+                                                `https://flagcdn.com/48x36/${countryList[selectedCountries.dropdown2].toLowerCase()}.png`
+                                                : 'https://flagcdn.com/48x36/ae.png'}
                                             style={{ width: "18%" }}
                                             alt="Flag"
                                         />
-                                        <select id="dropdown2" className='drop_style_head' onChange={loadFlag} value={selectedCountries.dropdown2 || ''}>
+                                        <select
+                                            id="dropdown2"
+                                            className='drop_style_head'
+                                            onChange={loadFlag}
+                                            value={selectedCountries.dropdown2 || ''}
+                                            onFocus={() => handleInputFocus('input2')}
+                                            onBlur={() => handleInputBlur('input2')}
+                                        >
                                             {Object.keys(countryList).map((currencyCode) => (
                                                 <option key={currencyCode} value={currencyCode}>
                                                     {countryList[currencyCode]}

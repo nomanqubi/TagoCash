@@ -30,7 +30,7 @@ export const Footer = () => {
             </div>
             <div className="col-lg-6">
               <div className="row">
-                <div className="col-6">
+                <div className="col-6 col-sm-4">
                   <div className="d-flex flex-column">
                     <p className='footer_link'>Quick links</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
@@ -42,7 +42,7 @@ export const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-6 col-sm-4">
                   <div className="d-flex flex-column">
                     <p className='footer_link'>News</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
@@ -52,7 +52,7 @@ export const Footer = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-6 col-sm-4">
                   <div className="d-flex flex-column">
                     <p className='footer_link'>Others</p>
                     <ul className='d-flex flex-column p-0 gap-2'>
@@ -74,11 +74,19 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
-              <div className='footer_name mt-2'>
-                <p className='footer_bottom_links'>Terms & Condtion</p>
-                <p className='footer_bottom_links'>Privacy Policy</p>
-                <p className='footer_bottom_links'>Cookie Policy</p>
+              <div className="row mt-3">
+                <div className="col-sm-3 col-xxl-3 col-xl-4 col-lg-4 col-md-3 col-sm-4">
+                  <p className='footer_bottom_links'>Terms & Condtion</p>
+                </div>
+                <div className="col-sm-3 col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                  <p className='footer_bottom_links'>Privacy Policy</p>
+                </div>
+                <div className="col-sm-3 col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                  <p className='footer_bottom_links'>Cookie Policy</p>
+                </div>
+                <div className="col-sm-3 col-xxl-3 col-xl-2 col-lg-2 col-md-3 col-sm-2">
                 <p className='footer_bottom_links'>MAP</p>
+                </div>
               </div>
             </div>
           </div>

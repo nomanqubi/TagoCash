@@ -121,23 +121,34 @@
     width: 100%;
     height: 75px;
     border-radius: 7px;
-    border: 1px solid var(--blueColor);
+    border: 1px solid #E1E1E1;
     background: #F4F9FF;
     display: flex;
     align-items: center;
 }
 
+.exchange_input.focused {
+    border-color: var(--blueColor); 
+}
+
+.drop_style_head.focused {
+    border-color: var(--blueColor); 
+}
+
 .exchange_box_one {
     width: 70%;
     height: 75px;
-    border-right: 1px solid var(--blueColor);
+    border-right: 1px solid #E1E1E1;
     display: flex;
     align-items: center;
 }
 
+.exchange_box_one.focused {
+    border-right-color: var(--blueColor); /* Border color when input is focused */
+}
+
 .exchangerate_input {
     width: 100%;
-    height: 50px;
     font-family: DM Sans;
     font-size: 24px;
     font-weight: 400;
